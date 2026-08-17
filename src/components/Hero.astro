@@ -1,0 +1,57 @@
+---
+// src/components/Hero.astro
+// 1. Importamos la imagen directamente desde src/assets
+import fondoIEEE from '../assets/Fondo-IEEE.webp';
+---
+<section
+  id="inicio"
+  class="section-wrap relative overflow-hidden pb-24 pt-36 md:pb-30 md:pt-44"
+  style={`background-image: linear-gradient(180deg, rgb(0 40 85 / 0.66), rgb(0 40 85 / 0.54)), url('${fondoIEEE.src}')`}
+>
+  <div class="hero-orb left-[5%] top-[24%] h-44 w-44 rounded-full bg-ieee-light/10"></div>
+  <div class="hero-orb right-[11%] top-[14%] h-56 w-56 rounded-full bg-ieee-accent/18 [animation-delay:1.6s]"></div>
+
+  <div class="relative z-10 mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 md:grid-cols-[1.05fr_0.95fr] lg:px-8">
+    <div class="text-white">
+      <p class="kicker text-white/92 border border-ieee-dark" data-animate="left">IEEE UTP · Transformacion Digital</p>
+      <h1 class="section-title mt-6 text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl" data-animate="left">
+        Diseñamos soluciones digitales con enfoque en impacto real.
+      </h1>
+      <p class="mt-6 max-w-xl text-base leading-relaxed text-blue-100 sm:text-lg" data-animate="left" data-delay="120">
+        Formamos talento en desarrollo de software, innovación y liderazgo técnico, conectando a estudiantes con retos reales de la comunidad universitaria y el ecosistema profesional.
+      </p>
+
+      <div class="mt-9 flex flex-wrap items-center gap-4" data-animate="left">
+        <a href="#contacto" class="btn-primary focusable px-7 py-3.5 text-sm sm:text-base border-1 border-white">Postula al Comité</a>
+        <a href="#areas" class="btn-secondary focusable px-7 py-3.5 text-sm sm:text-base">Explorar Áreas</a>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 text-white md:pt-10">
+      <article class="lift-hover col-span-2 rounded-2xl border border-white/24 bg-ieee-dark/55 p-6 text-white shadow-xl shadow-black/20 backdrop-blur-md" data-animate="zoom">
+        <p class="text-xs uppercase tracking-[0.16em] text-blue-100">Enfoque</p>
+        <p class="mt-2 text-2xl font-extrabold text-white">Ingeniería + Comunidad</p>
+        <p class="mt-3 text-sm leading-relaxed text-blue-100">
+          Equipos multidisciplinarios que transforman ideas en productos validables.
+        </p>
+      </article>
+
+      <article class="lift-hover rounded-2xl border border-white/24 bg-ieee-dark/55 p-5 text-white shadow-xl shadow-black/20 backdrop-blur-md" data-animate="zoom" class:list={["stagger-1"]}>
+        <p class="text-3xl font-extrabold">2</p>
+        <p class="mt-2 text-sm text-blue-100">Áreas estrategicas activas</p>
+      </article>
+
+      <article class="lift-hover rounded-2xl border border-white/24 bg-ieee-dark/55 p-5 text-white shadow-xl shadow-black/20 backdrop-blur-md" data-animate="zoom" class:list={["stagger-2"]}>
+        <p class="text-3xl font-extrabold">10+</p>
+        <p class="mt-2 text-sm text-blue-100">Iniciativas por ciclo</p>
+      </article>
+
+      <article class="lift-hover col-span-2 rounded-2xl border border-white/24 bg-ieee-dark/55 p-5 text-white shadow-xl shadow-black/20 backdrop-blur-md" data-animate="zoom" class:list={["stagger-3"]}>
+        <p class="text-sm font-semibold text-blue-100">Perfil objetivo</p>
+        <p class="mt-2 text-base leading-relaxed text-white">
+          Miembros con criterio técnico, capacidad colaborativa y vocación de servicio.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>

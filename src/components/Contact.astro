@@ -1,0 +1,69 @@
+<section id="contacto" class="section-wrap py-24">
+  <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+    <div class="mb-10 text-center">
+      <p class="kicker" data-animate>Postulación</p>
+      <h2 class="section-title mt-5 text-3xl text-ieee-dark sm:text-4xl" data-animate>Quieres ser parte del equipo?</h2>
+      <p class="mt-4 text-slate-600" data-animate>
+        Dejanos tus datos y te contactaremos para el proceso de selección.
+      </p>
+    </div>
+
+    <div class="card-panel rounded-3xl p-8 md:p-10" data-animate="zoom">
+      <form id="contact-form">
+        <div class="mb-6">
+          <label for="name" class="mb-2 block text-sm font-semibold text-slate-700">Nombre completo</label>
+          <input type="text" id="name" name="name" required placeholder="Ej. Steve jobs" class="focusable w-full rounded-xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-ieee-light">
+        </div>
+
+        <div class="mb-6">
+          <label for="email" class="mb-2 block text-sm font-semibold text-slate-700">Correo institucional</label>
+          <input type="email" id="email" name="email" required placeholder="UXXXXXXXX@utp.edu.pe" class="focusable w-full rounded-xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-ieee-light">
+        </div>
+
+        <div class="mb-8">
+          <label for="message" class="mb-2 block text-sm font-semibold text-slate-700">Por que te gustaria unirte y a que área?</label>
+          <textarea id="message" name="message" rows="4" required class="focusable w-full resize-none rounded-xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-ieee-light"></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary focusable w-full px-6 py-4 text-base">
+          Enviar solicitud
+        </button>
+
+        <div id="form-status" class="mt-6 hidden rounded-xl p-4 text-center text-sm font-bold"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const statusDiv = document.getElementById('form-status');
+
+  if (form instanceof HTMLFormElement && statusDiv) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+
+      statusDiv.classList.remove('hidden', 'bg-red-50', 'text-red-700');
+      statusDiv.classList.add('bg-blue-50', 'text-blue-700');
+      statusDiv.textContent = 'Enviando tu solicitud...';
+
+      try {
+        void data;
+        await new Promise(r => setTimeout(r, 1200));
+
+        statusDiv.classList.remove('bg-blue-50', 'text-blue-700');
+        statusDiv.classList.add('bg-green-50', 'text-green-700');
+        statusDiv.textContent = 'Genial. Hemos registrado tu solicitud y te escribiremos pronto.';
+        form.reset();
+      } catch (error) {
+        void error;
+        statusDiv.classList.remove('bg-blue-50', 'text-blue-700', 'bg-green-50', 'text-green-700');
+        statusDiv.classList.add('bg-red-50', 'text-red-700');
+        statusDiv.textContent = 'Ocurrio un error al enviar. Intenta nuevamente.';
+      }
+    });
+  }
+</script>

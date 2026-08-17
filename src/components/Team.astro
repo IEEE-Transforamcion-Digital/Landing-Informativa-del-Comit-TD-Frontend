@@ -1,0 +1,71 @@
+<section id="equipo" class="section-wrap py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center">
+      <p class="kicker" data-animate>Capital Humano</p>
+      <h2 class="section-title mt-5 text-3xl text-ieee-dark sm:text-4xl" data-animate>
+        Equipo con mentalidad de producto y colaboracion transversal.
+      </h2>
+    </div>
+
+    <div id="team-container" class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="col-span-full py-10">
+        <div class="flex animate-pulse flex-col items-center">
+          <div class="mb-4 h-24 w-24 rounded-full bg-slate-200"></div>
+          <div class="mb-2 h-4 w-1/2 rounded bg-slate-200"></div>
+          <div class="h-3 w-1/3 rounded bg-slate-200"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('team-container');
+    if (!container) return;
+
+    try {
+      const team = [
+        { id: 1, name: 'Eberth Rojas', role: 'Frontend Developer', area: 'D&I', avatar: '' },
+        { id: 2, name: 'María López', role: 'Backend Developer', area: 'D&I', avatar: '' },
+        { id: 3, name: 'Carlos Díaz', role: 'Coordinador', area: 'Impacto Tech', avatar: '' },
+        { id: 4, name: 'Ana Silva', role: 'Data Analyst', area: 'Impacto Tech', avatar: '' },
+      ];
+
+      container.innerHTML = '';
+
+      team.forEach((member, index) => {
+        const card = document.createElement('div');
+        card.className = 'card-panel lift-hover rounded-2xl p-6 text-center';
+        card.setAttribute('data-animate', 'zoom');
+        card.classList.add(`stagger-${(index % 4) + 1}`);
+
+        const avatarSrc = member.avatar || `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=1e3a8a&color=fff`;
+
+        card.innerHTML = `
+          <img src="${avatarSrc}" alt="Foto de ${member.name}" class="mx-auto mb-4 h-24 w-24 rounded-full border-4 border-white object-cover shadow-md" />
+          <h3 class="text-lg font-extrabold text-ieee-dark">${member.name}</h3>
+          <p class="mt-1 text-sm font-semibold text-ieee-blue">${member.role}</p>
+          <span class="mt-3 inline-flex rounded-full border border-ieee-blue/20 bg-ieee-blue/8 px-3 py-1 text-xs font-bold text-ieee-dark">${member.area}</span>
+        `;
+
+        container.appendChild(card);
+      });
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      container.querySelectorAll('[data-animate]').forEach((el) => revealObserver.observe(el));
+    } catch (error) {
+      container.innerHTML = '<p class="col-span-full text-center font-semibold text-rose-600">No se pudo cargar la informacion del equipo.</p>';
+    }
+  });
+</script>

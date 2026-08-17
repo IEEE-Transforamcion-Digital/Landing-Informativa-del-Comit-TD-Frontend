@@ -1,0 +1,47 @@
+---
+const tracks = [
+  {
+    title: 'Desarrollo e Innovacion (D&I)',
+    subtitle: 'Ingeniería de producto y arquitectura',
+    summary:
+      'Construimos aplicaciones end-to-end con buenas prácticas de diseño, desarrollo, testing y despliegue.',
+    bullets: ['Git Flow y code review', 'Arquitectura backend y frontend', 'Observabilidad y calidad continua']
+  },
+  {
+    title: 'Impacto Tech',
+    subtitle: 'Difusión, adopción y comunidad',
+    summary:
+      'Conectamos tecnología con personas mediante eventos, proyectos de impacto y evaluación de resultados.',
+    bullets: ['Comunicación y growth', 'Gestión de eventos y alianzas', 'Ética de impacto y aprendizaje']
+  }
+];
+---
+
+<section id="areas" class="section-wrap py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center">
+      <p class="kicker" data-animate>Modelo Operativo</p>
+      <h2 class="section-title mt-5 text-3xl text-ieee-dark sm:text-4xl" data-animate>
+        Dos frentes coordinados para crear y escalar valor.
+      </h2>
+    </div>
+
+    <div class="mt-12 grid gap-7 md:grid-cols-2">
+      {
+        tracks.map((track, idx) => (
+          <article class="card-panel lift-hover group rounded-2xl p-8" data-animate="zoom" class:list={[`stagger-${idx + 1}`]}>
+            <span class="chip">Area {idx + 1}</span>
+            <h3 class="mt-4 text-2xl font-extrabold text-ieee-dark">{track.title}</h3>
+            <p class="mt-2 text-sm font-semibold uppercase tracking-wide text-ieee-blue">{track.subtitle}</p>
+            <p class="mt-4 text-sm leading-relaxed text-slate-600">{track.summary}</p>
+
+            <ul class="mt-6 space-y-2 border-t border-ieee-blue/12 pt-5 text-sm text-slate-700">
+              {track.bullets.map((bullet) => <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-ieee-accent"></span>{bullet}</li>)}
+            </ul>
+          </article>
+        ))
+      }
+      </div>
+    </div>
+
+</section>
