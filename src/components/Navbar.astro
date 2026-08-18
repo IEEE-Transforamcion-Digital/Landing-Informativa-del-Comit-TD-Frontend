@@ -2,90 +2,164 @@
 import logoIEEE from '../assets/IEEE_Logo.png';
 ---
 
-<header id="site-header" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div id="nav-shell" class="mt-3 flex h-20 items-center justify-between rounded-2xl border border-white/10 bg-ieee-dark/88 px-4 shadow-2xl shadow-black/20 backdrop-blur-md transition-all duration-300 sm:px-6">
-      <a href="#inicio" class="focusable block" aria-label="Ir al inicio">
-        <img
-          src={logoIEEE.src}
-          alt="Logo Universidad Tecnologica del Peru - IEEE Student Branch"
-          class="h-16 w-auto object-contain drop-shadow-md sm:h-17"
-        />
-      </a>
-
-      <nav class="hidden items-center gap-1 md:flex" aria-label="Navegacion principal">
-        <a href="#inicio" class="focusable rounded-lg bg-white/12 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-px hover:bg-white/16">Inicio</a>
-        <a href="#sobre-nosotros" class="focusable rounded-lg px-4 py-2 text-sm font-semibold text-blue-100/90 transition-all duration-300 hover:-translate-y-px hover:bg-white/10 hover:text-white">Nosotros</a>
-        <a href="#areas" class="focusable rounded-lg px-4 py-2 text-sm font-semibold text-blue-100/90 transition-all duration-300 hover:-translate-y-px hover:bg-white/10 hover:text-white">Areas</a>
-        <a href="#equipo" class="focusable rounded-lg px-4 py-2 text-sm font-semibold text-blue-100/90 transition-all duration-300 hover:-translate-y-px hover:bg-white/10 hover:text-white">Equipo</a>
-        <a href="#eventos" class="focusable rounded-lg px-4 py-2 text-sm font-semibold text-blue-100/90 transition-all duration-300 hover:-translate-y-px hover:bg-white/10 hover:text-white">Eventos</a>
-        <a href="#contacto" class="focusable rounded-lg px-4 py-2 text-sm font-semibold text-blue-100/90 transition-all duration-300 hover:-translate-y-px hover:bg-white/10 hover:text-white">Únete</a>
-      </nav>
-
-      <button
-        id="mobile-menu-btn"
-        class="focusable inline-flex items-center justify-center rounded-lg border border-white/20 bg-white/10 p-2 text-white transition-colors hover:bg-white/16 md:hidden"
-        aria-label="Abrir menu"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
+<header id="site-header" class="fixed inset-x-0 top-0 z-50">
+  <div class="w-full">
+    <div
+      id="nav-shell"
+      class="w-full border-b border-white/10 bg-ieee-dark/95 shadow-2xl shadow-black/20 backdrop-blur-md"
+    >
+      <div
+        class="mx-auto flex h-21 w-full max-w-7xl items-center justify-between px-4 sm:px-6 md:h-23 lg:px-8"
       >
-        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-        </svg>
-      </button>
+        <a href="#inicio" class="focusable block" aria-label="Ir al inicio">
+          <img
+            src={logoIEEE.src}
+            alt="Logo Universidad Tecnologica del Peru - IEEE Student Branch"
+            class="h-16 w-auto object-contain drop-shadow-md sm:h-17"
+          />
+        </a>
+
+        <nav class="hidden items-center gap-1 md:flex" aria-label="Navegacion principal">
+          <a
+            href="#inicio"
+            class="focusable rounded-lg px-4 py-2 text-sm font-semibold text-blue-100/90 transition-all duration-300 hover:-translate-y-px hover:bg-white/10 hover:text-white"
+            >Inicio</a
+          >
+
+          <a
+            href="#sobre-nosotros"
+            class="focusable rounded-lg px-4 py-2 text-sm font-semibold text-blue-100/90 transition-all duration-300 hover:-translate-y-px hover:bg-white/10 hover:text-white"
+            >Nosotros</a
+          >
+
+          <a
+            href="#areas"
+            class="focusable rounded-lg px-4 py-2 text-sm font-semibold text-blue-100/90 transition-all duration-300 hover:-translate-y-px hover:bg-white/10 hover:text-white"
+            >Areas</a
+          >
+
+          <a
+            href="#equipo"
+            class="focusable rounded-lg px-4 py-2 text-sm font-semibold text-blue-100/90 transition-all duration-300 hover:-translate-y-px hover:bg-white/10 hover:text-white"
+            >Equipo</a
+          >
+
+          <a
+            href="#eventos"
+            class="focusable rounded-lg px-4 py-2 text-sm font-semibold text-blue-100/90 transition-all duration-300 hover:-translate-y-px hover:bg-white/10 hover:text-white"
+            >Eventos</a
+          >
+
+          <a
+            href="#contacto"
+            class="focusable rounded-lg px-4 py-2 text-sm font-semibold text-blue-100/90 transition-all duration-300 hover:-translate-y-px hover:bg-white/10 hover:text-white"
+            >Únete</a
+          >
+        </nav>
+
+        <button
+          id="mobile-menu-btn"
+          class="focusable inline-flex items-center justify-center rounded-lg border border-white/20 bg-white/10 p-2 text-white transition-colors hover:bg-white/16 md:hidden"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
     </div>
 
-    <div id="mobile-menu" class="mt-2 hidden rounded-2xl border border-white/10 bg-ieee-dark/95 p-3 shadow-xl backdrop-blur-md md:hidden">
+    <div
+      id="mobile-menu"
+      class="mx-3 mt-3 max-h-0 origin-top overflow-hidden rounded-2xl border border-white/10 bg-ieee-dark/95 p-0 opacity-0 shadow-xl backdrop-blur-md transition-all duration-300 ease-out md:hidden"
+    >
       <nav class="flex flex-col gap-1.5" aria-label="Navegacion movil">
-        <a href="#inicio" class="focusable rounded-lg bg-white/12 px-3 py-2.5 text-sm font-medium text-white transition-colors hover:bg-white/16">Inicio</a>
-        <a href="#sobre-nosotros" class="focusable rounded-lg px-3 py-2.5 text-sm font-medium text-blue-100/90 transition-colors hover:bg-white/12">Nosotros</a>
-        <a href="#areas" class="focusable rounded-lg px-3 py-2.5 text-sm font-medium text-blue-100/90 transition-colors hover:bg-white/12">Areas</a>
-        <a href="#equipo" class="focusable rounded-lg px-3 py-2.5 text-sm font-medium text-blue-100/90 transition-colors hover:bg-white/12">Equipo</a>
-        <a href="#eventos" class="focusable rounded-lg px-3 py-2.5 text-sm font-medium text-blue-100/90 transition-colors hover:bg-white/12">Eventos</a>
-        <a href="#contacto" class="focusable rounded-lg px-3 py-2.5 text-sm font-medium text-blue-100/90 transition-colors hover:bg-white/12">Unete</a>
+        <a
+          href="#inicio"
+          class="focusable rounded-lg px-3 py-2.5 text-sm font-medium text-blue-100/90 transition-colors hover:bg-white/12"
+          >Inicio</a
+        >
+
+        <a
+          href="#sobre-nosotros"
+          class="focusable rounded-lg px-3 py-2.5 text-sm font-medium text-blue-100/90 transition-colors hover:bg-white/12"
+          >Nosotros</a
+        >
+
+        <a
+          href="#areas"
+          class="focusable rounded-lg px-3 py-2.5 text-sm font-medium text-blue-100/90 transition-colors hover:bg-white/12"
+          >Areas</a
+        >
+
+        <a
+          href="#equipo"
+          class="focusable rounded-lg px-3 py-2.5 text-sm font-medium text-blue-100/90 transition-colors hover:bg-white/12"
+          >Equipo</a
+        >
+
+        <a
+          href="#eventos"
+          class="focusable rounded-lg px-3 py-2.5 text-sm font-medium text-blue-100/90 transition-colors hover:bg-white/12"
+          >Eventos</a
+        >
+
+        <a
+          href="#contacto"
+          class="focusable rounded-lg px-3 py-2.5 text-sm font-medium text-blue-100/90 transition-colors hover:bg-white/12"
+          >Unete</a
+        >
       </nav>
     </div>
   </div>
 </header>
 
 <script>
-  const shell = document.getElementById('nav-shell');
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
 
-  const toggleScrolledHeader = () => {
-    if (!shell) return;
+  const toggleMobileMenu = (open: boolean) => {
+    if (!btn || !menu) return;
 
-    if (window.scrollY > 16) {
-      shell.classList.add('mt-2', 'h-[74px]');
-      shell.classList.remove('mt-3', 'h-20');
+    btn.setAttribute('aria-expanded', String(open));
+
+    if (open) {
+      menu.classList.remove('max-h-0', 'opacity-0', 'p-0');
+      menu.classList.add('max-h-96', 'opacity-100', 'p-3');
     } else {
-      shell.classList.remove('mt-2', 'h-[74px]');
-      shell.classList.add('mt-3', 'h-20');
+      menu.classList.remove('max-h-96', 'opacity-100', 'p-3');
+      menu.classList.add('max-h-0', 'opacity-0', 'p-0');
     }
   };
 
   if (btn && menu) {
     btn.addEventListener('click', () => {
       const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!expanded));
-      menu.classList.toggle('hidden');
+      toggleMobileMenu(!expanded);
     });
 
     menu.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
-        btn.setAttribute('aria-expanded', 'false');
-        menu.classList.add('hidden');
+        toggleMobileMenu(false);
       });
     });
 
     document.addEventListener('keydown', (event) => {
       if (event.key !== 'Escape') return;
-      btn.setAttribute('aria-expanded', 'false');
-      menu.classList.add('hidden');
+      toggleMobileMenu(false);
     });
   }
-
-  toggleScrolledHeader();
-  window.addEventListener('scroll', toggleScrolledHeader, { passive: true });
 </script>
