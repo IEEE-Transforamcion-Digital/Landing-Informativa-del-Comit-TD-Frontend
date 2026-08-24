@@ -1,17 +1,203 @@
-<footer class="mt-6 border-t border-ieee-blue/15 bg-ieee-dark py-10 text-white">
-  <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-4 text-center sm:px-6 md:flex-row md:text-left lg:px-8">
-    <div>
-      <p class="section-title text-lg font-extrabold">Comite de Transformacion Digital</p>
-      <p class="mt-1 text-sm text-blue-100/80">IEEE UTP Student Branch</p>
+---
+import logo from '../assets/IEEE_Logo.png';
+import logo_footer from '../assets/IEEE_footer_Logo.png';
+
+import instagramIcon from '../assets/instagram-logo.svg';
+import facebookIcon from '../assets/facebook-logo.svg';
+import linkedinIcon from '../assets/linkedin-logo.svg';
+import githubIcon from '../assets/github-logo.svg';
+
+const currentYear = new Date().getFullYear();
+
+const navigation = [
+  { name: 'Inicio', href: '#inicio' },
+  { name: 'Nosotros', href: '#nosotros' },
+  { name: 'Áreas', href: '#areas' },
+  { name: 'Eventos', href: '#eventos' },
+  { name: 'Equipo', href: '#equipo' },
+  { name: 'Contacto', href: '#contacto' },
+];
+
+const socialLinks = [
+  {
+    name: 'Instagram',
+    href: 'REEMPLAZAR_URL_INSTAGRAM',
+    icon: instagramIcon,
+  },
+  {
+    name: 'Facebook',
+    href: 'REEMPLAZAR_URL_FACEBOOK',
+    icon: facebookIcon,
+  },
+  {
+    name: 'LinkedIn',
+    href: 'REEMPLAZAR_URL_LINKEDIN',
+    icon: linkedinIcon,
+  },
+  {
+    name: 'GitHub',
+    href: 'REEMPLAZAR_URL_GITHUB',
+    icon: githubIcon,
+  },
+];
+---
+
+<footer class="border-t border-ieee-blue/20 bg-ieee-dark text-white">
+  <div
+    class="mx-auto max-w-7xl
+         pt-8 pb-8 pl-6 pr-6
+         sm:pt-16 sm:pb-10 sm:pl-8 sm:pr-8
+         lg:pt-14 lg:pb-10 lg:pl-12 lg:pr-12"
+  >
+    <!-- Contenido principal -->
+    <div
+      class="grid grid-cols-1 gap-12
+         sm:grid-cols-2
+         lg:grid-cols-[1.4fr_1fr_1fr_1.1fr]"
+    >
+      <!-- IDENTIDAD -->
+      <section class="flex flex-col gap-5">
+        <div class="flex items-center gap-4">
+          <div class="flex w-full justify-start">
+            <img
+              src={logo_footer.src}
+              alt="Logo del Comité de Transformación Digital - IEEE UTP Student Branch"
+              class="h-24 w-96 object-contain object-left sm:h-30 sm:w-96 lg:h-24 lg:w-96"
+            />
+          </div>
+        </div>
+
+        <div class="max-w-sm">
+          <p class="text-base font-semibold text-white sm:text-lg">Innovación con impacto.</p>
+
+          <p class="mt-2 text-sm leading-6 text-blue-100/70 sm:text-base">
+            Impulsamos la transformación digital mediante innovación, tecnología y participación
+            estudiantil en la UTP.
+          </p>
+        </div>
+      </section>
+
+      <!-- NAVEGACIÓN + COMUNIDAD -->
+      <div class="grid grid-cols-2 gap-8 sm:contents lg:contents">
+        <!-- NAVEGACIÓN -->
+        <section>
+          <h3 class="text-sm font-bold uppercase tracking-[0.15em] text-blue-100 sm:text-base">
+            Navegación
+          </h3>
+
+          <nav class="mt-5" aria-label="Navegación del pie de página">
+            <ul class="space-y-3">
+              {
+                navigation.map((item) => (
+                  <li>
+                    <a
+                      href={item.href}
+                      class="text-sm text-blue-100/75 transition duration-200 hover:translate-x-1 hover:text-white sm:text-base"
+                    >
+                      {item.name}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </nav>
+        </section>
+
+        <!-- COMUNIDAD -->
+        <section>
+          <h3 class="text-sm font-bold uppercase tracking-[0.15em] text-blue-100 sm:text-base">
+            Comunidad
+          </h3>
+
+          <ul class="mt-5 space-y-3">
+            {
+              socialLinks.map((social) => (
+                <li>
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="group flex items-center gap-3 text-sm text-blue-100/75 transition hover:text-white sm:text-base"
+                  >
+                    <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-blue-100/20 bg-white/5 transition group-hover:border-ieee-accent group-hover:bg-ieee-accent">
+                      <img src={social.icon.src} alt="" class="h-4 w-4 object-contain" />
+                    </span>
+
+                    {social.name}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+      </div>
+
+      <!-- CONTACTO -->
+      <section>
+        <h3 class="text-sm font-bold uppercase tracking-[0.15em] text-blue-100 sm:text-base">
+          Contacto
+        </h3>
+
+        <div class="mt-5 space-y-5">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-wider text-blue-100/50">
+              Correo institucional
+            </p>
+
+            <a
+              href="mailto:u22230980@utp.edu.pe"
+              class="mt-2 block break-all text-sm font-medium text-white transition hover:text-ieee-accent sm:text-base"
+            >
+              u22230980@utp.edu.pe
+            </a>
+          </div>
+
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-wider text-blue-100/50">
+              Información legal
+            </p>
+
+            <a
+              href="/politica-privacidad"
+              class="mt-2 inline-block text-sm text-white transition hover:text-ieee-accent sm:text-base"
+            >
+              Política de privacidad
+            </a>
+          </div>
+
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-wider text-blue-100/50">
+              Centro de Operaciones
+            </p>
+
+            <a
+              href="/politica-privacidad"
+              class="mt-2 inline-block text-[15px] text-white transition hover:text-ieee-accent"
+            >
+              Jr. Hernán Velarde 289, Lima
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
 
-    <div class="text-xs font-semibold uppercase tracking-wider text-blue-100/75">
-      <span class="mr-2 inline-block h-2 w-2 rounded-full bg-ieee-accent"></span>
-      Innovacion con impacto
-    </div>
+    <!-- Línea divisoria -->
+    <div class="mt-6 border-t border-blue-100/10 pt-6">
+      <div
+        class="flex flex-col gap-3 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left"
+      >
+        <p class="text-sm text-blue-100/60">
+          © {currentYear} IEEE UTP Student Branch. Todos los derechos reservados.
+        </p>
 
-    <div class="text-sm text-blue-100/70">
-      &copy; {new Date().getFullYear()} Todos los derechos reservados.
+        <div class="flex items-center justify-center gap-2 sm:justify-end">
+          <span class="h-2 w-2 rounded-full bg-ieee-accent"></span>
+
+          <p class="text-xs font-bold uppercase tracking-[0.18em] text-blue-100/70">
+            Innovación con impacto
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </footer>

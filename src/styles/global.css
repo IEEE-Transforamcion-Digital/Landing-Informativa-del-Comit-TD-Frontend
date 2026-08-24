@@ -37,6 +37,10 @@ body {
     linear-gradient(180deg, var(--color-surface-0) 0%, #f9fbfd 42%, #f3f8fc 100%);
 }
 
+:root {
+  --ieee-footer-accent: #d5d8df;
+}
+
 .section-wrap {
   position: relative;
   overflow: clip;

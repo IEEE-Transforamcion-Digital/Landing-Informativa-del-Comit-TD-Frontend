@@ -2,20 +2,23 @@
 import logoIEEE from '../assets/IEEE_Logo.png';
 ---
 
-<header id="site-header" class="fixed inset-x-0 top-0 z-50">
+<header
+  id="site-header"
+  class="fixed inset-x-0 top-0 z-50 transition-transform duration-300 ease-in-out"
+>
   <div class="w-full">
     <div
       id="nav-shell"
       class="w-full border-b border-white/10 bg-ieee-dark/95 shadow-2xl shadow-black/20 backdrop-blur-md"
     >
       <div
-        class="mx-auto flex h-21 w-full max-w-7xl items-center justify-between px-4 sm:px-6 md:h-23 lg:px-8"
+        class="mx-auto flex h-22 w-full max-w-7xl items-center justify-between px-4 sm:px-6 md:h-23 lg:px-8"
       >
         <a href="#inicio" class="focusable block" aria-label="Ir al inicio">
           <img
             src={logoIEEE.src}
             alt="Logo Universidad Tecnologica del Peru - IEEE Student Branch"
-            class="h-16 w-auto object-contain drop-shadow-md sm:h-17"
+            class="h-17 mt-1 w-auto object-contain drop-shadow-md sm:h-17"
           />
         </a>
 
@@ -162,4 +165,54 @@ import logoIEEE from '../assets/IEEE_Logo.png';
       toggleMobileMenu(false);
     });
   }
+</script>
+
+<script>
+  const header = document.getElementById('site-header');
+
+  let lastScrollY = window.scrollY;
+  let scrollUpDistance = 0;
+
+  const HIDE_AFTER = 85;
+  const SHOW_AFTER = 40;
+
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (!header) return;
+
+      const currentScrollY = window.scrollY;
+      const difference = currentScrollY - lastScrollY;
+
+      const atBottom =
+        window.innerHeight + currentScrollY >= document.documentElement.scrollHeight - 10;
+
+      if (atBottom) {
+        header.classList.add('-translate-y-full');
+        scrollUpDistance = 0;
+        lastScrollY = currentScrollY;
+        return;
+      }
+
+      if (difference > 0) {
+        scrollUpDistance = 0;
+
+        if (currentScrollY > HIDE_AFTER) {
+          header.classList.add('-translate-y-full');
+        }
+      }
+
+      else if (difference < 0) {
+        scrollUpDistance += Math.abs(difference);
+
+        if (scrollUpDistance >= SHOW_AFTER) {
+          header.classList.remove('-translate-y-full');
+          scrollUpDistance = 0;
+        }
+      }
+
+      lastScrollY = currentScrollY;
+    },
+    { passive: true },
+  );
 </script>
