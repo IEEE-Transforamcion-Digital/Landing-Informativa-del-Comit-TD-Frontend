@@ -131,8 +131,17 @@ import logoIEEE from '../assets/IEEE_Logo.png';
 </header>
 
 <script>
+  // ========================================
+  // ELEMENTOS DEL DOM
+  // ========================================
+
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
+  const header = document.getElementById('site-header');
+
+  // ========================================
+  // MENU MÓVIL
+  // ========================================
 
   const toggleMobileMenu = (open: boolean) => {
     if (!btn || !menu) return;
@@ -165,10 +174,10 @@ import logoIEEE from '../assets/IEEE_Logo.png';
       toggleMobileMenu(false);
     });
   }
-</script>
 
-<script>
-  const header = document.getElementById('site-header');
+  // ========================================
+  // NAVBAR AL HACER SCROLL
+  // ========================================
 
   let lastScrollY = window.scrollY;
   let scrollUpDistance = 0;
@@ -200,9 +209,7 @@ import logoIEEE from '../assets/IEEE_Logo.png';
         if (currentScrollY > HIDE_AFTER) {
           header.classList.add('-translate-y-full');
         }
-      }
-
-      else if (difference < 0) {
+      } else if (difference < 0) {
         scrollUpDistance += Math.abs(difference);
 
         if (scrollUpDistance >= SHOW_AFTER) {
